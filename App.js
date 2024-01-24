@@ -39,10 +39,15 @@ const Header = ()=>{
     )
 }
 
-const RestaurantCard = () =>{
+const RestaurantCard = (props) =>{
+    // const {resName , cuisine } = props
     return (
 <div className="resCard">
-        <h3>Paragon</h3>
+        <img alt="resimg" src="https://amritsruae.com/blog/wp-content/uploads/2021/01/chicken-biryani-benefits-main.jpg" width={'100%'} style={{borderRadius:'15px'}}></img>
+        <h3>{props.resName}</h3>
+        <h5 style={{color:"gray"}}>{props.cuisine}</h5>
+        <h5>4.4 <span>⭐</span></h5>
+        <h5>38 minutes</h5>
     </div>
     )
     
@@ -53,7 +58,11 @@ const Body = ()=> {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-              <RestaurantCard/>
+              <RestaurantCard resName="PARAGON" cuisine="Biriyani , North Indian , Asian" />
+              <RestaurantCard resName="KFC" cuisine="Burger, Fastfood"/>
+              
+
+
             </div>
         </div>
     )
@@ -73,3 +82,7 @@ const AppLayout = ()=> {
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<AppLayout/>)
+
+
+
+// https://www.chilitochoc.com/wp-content/uploads/2020/05/crispy-chicken-burger-e1615289026561.jpg

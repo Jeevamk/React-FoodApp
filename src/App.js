@@ -1,50 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "../components/Header";
 
-/**
- * Header
- * -Logo
- * -Nav Items
- *
- * Body
- * -Search
- * -Restaurant Container
- *  -Restaurant Card
- *     -image
- *     -Name , star rating , cuisine,delivery time
- *
- * Footer
- * -Copyright
- * -Links
- * -Address
- * -Contact
- */
 
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=360"
-        ></img>
-      </div>
-      <div className="navItems">
-        <ul>
-          <li>Home</li>
-          <li>Contact Us</li>
-          <li>Offers</li>
-          <li>Profile</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { cloudinaryImageId, name,costForTwo, avgRating, cuisines } = resData?.data;
+  const { cloudinaryImageId, name, costForTwo, avgRating, cuisines } =
+    resData?.data;
   return (
     <div className="resCard">
       <img
@@ -53,14 +16,15 @@ const RestaurantCard = (props) => {
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
           cloudinaryImageId
         }
-        width={"100%"} height={'250px'}
+        width={"100%"}
+        height={"250px"}
         style={{ borderRadius: "15px" }}
       ></img>
       <h3>{name}</h3>
-      <h4 style={{color:"green"}}>{costForTwo} </h4>
+      <h4 style={{ color: "green" }}>{costForTwo} </h4>
       <h5>
         <span>⭐</span>
-        {avgRating} <span style={{ paddingLeft: "10px" }}>* 38 minutes</span>
+        {avgRating} <span style={{ paddingLeft: "10px" }}>* {resData.data.sla.deliveryTime} Minutes</span>
       </h5>
       <p style={{ color: "gray" }}>{cuisines.join(", ")}</p>
     </div>
@@ -587,374 +551,357 @@ const resList = [
   },
   {
     data: {
-    "id": "480696",
-    "name": "Puresouth",
-    "cloudinaryImageId": "ptmv9ilibohoiwgohdy1",
-    "locality": "Beach Road",
-    "areaName": "Bilathikkulam",
-    "costForTwo": "₹199 for two",
-    "cuisines": [
-    "Chinese",
-    "South Indian"
-    ],
-    "avgRating": 4.3,
-    "veg": true,
-    "parentId": "162872",
-    "avgRatingString": "4.3",
-    "totalRatingsString": "1K+",
-    "promoted": true,
-    "adTrackingId": "cid=10766464~p=3~eid=0000018d-3b29-c9bc-1eb6-ef7a00aa034d~srvts=1706094610876~45995",
-    "sla": {
-    "deliveryTime": 29,
-    "lastMileTravel": 1.9,
-    "serviceability": "SERVICEABLE",
-    "slaString": "29 mins",
-    "lastMileTravelString": "1.9 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "480696",
+      name: "Puresouth",
+      cloudinaryImageId: "ptmv9ilibohoiwgohdy1",
+      locality: "Beach Road",
+      areaName: "Bilathikkulam",
+      costForTwo: "₹199 for two",
+      cuisines: ["Chinese", "South Indian"],
+      avgRating: 4.3,
+      veg: true,
+      parentId: "162872",
+      avgRatingString: "4.3",
+      totalRatingsString: "1K+",
+      promoted: true,
+      adTrackingId:
+        "cid=10766464~p=3~eid=0000018d-3b29-c9bc-1eb6-ef7a00aa034d~srvts=1706094610876~45995",
+      sla: {
+        deliveryTime: 29,
+        lastMileTravel: 1.9,
+        serviceability: "SERVICEABLE",
+        slaString: "29 mins",
+        lastMileTravelString: "1.9 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-24 22:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textExtendedBadges: {},
+          textBased: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "30% OFF",
+        subHeader: "UPTO ₹75",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-24 22:00:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=480696",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "imageBased": {},
-    "textExtendedBadges": {},
-    "textBased": {}
-    }
-    },
-    "aggregatedDiscountInfoV3": {
-    "header": "30% OFF",
-    "subHeader": "UPTO ₹75"
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=480696",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    },
-    {
+  },
+  {
     data: {
-    "id": "803362",
-    "name": "Kappikoottam",
-    "cloudinaryImageId": "f1bc9ddf53de574cdc35ab2f717df234",
-    "locality": "YMCA Cross Road",
-    "areaName": "Beach Road",
-    "costForTwo": "₹250 for two",
-    "cuisines": [
-    "South Indian",
-    "Biryani",
-    "Beverages"
-    ],
-    "avgRating": 4.2,
-    "parentId": "479558",
-    "avgRatingString": "4.2",
-    "totalRatingsString": "10+",
-    "sla": {
-    "deliveryTime": 23,
-    "lastMileTravel": 0.4,
-    "serviceability": "SERVICEABLE",
-    "slaString": "23 mins",
-    "lastMileTravelString": "0.4 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "803362",
+      name: "Kappikoottam",
+      cloudinaryImageId: "f1bc9ddf53de574cdc35ab2f717df234",
+      locality: "YMCA Cross Road",
+      areaName: "Beach Road",
+      costForTwo: "₹250 for two",
+      cuisines: ["South Indian", "Biryani", "Beverages"],
+      avgRating: 4.2,
+      parentId: "479558",
+      avgRatingString: "4.2",
+      totalRatingsString: "10+",
+      sla: {
+        deliveryTime: 23,
+        lastMileTravel: 0.4,
+        serviceability: "SERVICEABLE",
+        slaString: "23 mins",
+        lastMileTravelString: "0.4 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-24 21:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      aggregatedDiscountInfoV2: {},
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textExtendedBadges: {},
+          textBased: {},
+        },
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      isNewlyOnboarded: true,
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-24 21:00:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=803362",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "aggregatedDiscountInfoV2": {},
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "imageBased": {},
-    "textExtendedBadges": {},
-    "textBased": {}
-    }
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "isNewlyOnboarded": true,
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=803362",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    },
-    {
+  },
+  {
     data: {
-    "id": "518827",
-    "name": "Tastea",
-    "cloudinaryImageId": "whrteiqyaihlmfnzdv1q",
-    "locality": "Garlic Road",
-    "areaName": "Vellayil",
-    "costForTwo": "₹200 for two",
-    "cuisines": [
-    "Beverages",
-    "American"
-    ],
-    "avgRating": 3.7,
-    "parentId": "309954",
-    "avgRatingString": "3.7",
-    "totalRatingsString": "20+",
-    "sla": {
-    "deliveryTime": 20,
-    "lastMileTravel": 0.4,
-    "serviceability": "SERVICEABLE",
-    "slaString": "20 mins",
-    "lastMileTravelString": "0.4 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "518827",
+      name: "Tastea",
+      cloudinaryImageId: "whrteiqyaihlmfnzdv1q",
+      locality: "Garlic Road",
+      areaName: "Vellayil",
+      costForTwo: "₹200 for two",
+      cuisines: ["Beverages", "American"],
+      avgRating: 3.7,
+      parentId: "309954",
+      avgRatingString: "3.7",
+      totalRatingsString: "20+",
+      sla: {
+        deliveryTime: 20,
+        lastMileTravel: 0.4,
+        serviceability: "SERVICEABLE",
+        slaString: "20 mins",
+        lastMileTravelString: "0.4 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-24 19:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textExtendedBadges: {},
+          textBased: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "20% OFF",
+        subHeader: "UPTO ₹50",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-24 19:00:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=518827",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "imageBased": {},
-    "textExtendedBadges": {},
-    "textBased": {}
-    }
-    },
-    "aggregatedDiscountInfoV3": {
-    "header": "20% OFF",
-    "subHeader": "UPTO ₹50"
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=518827",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    },
-    {
+  },
+  {
     data: {
-    "id": "437938",
-    "name": "Big Fat Momo",
-    "cloudinaryImageId": "niejlwued12ctp4rsenp",
-    "locality": "PT Usha Road",
-    "areaName": "Vellayil",
-    "costForTwo": "₹199 for two",
-    "cuisines": [
-    "Chinese",
-    "Pizzas"
-    ],
-    "avgRating": 4.3,
-    "parentId": "20555",
-    "avgRatingString": "4.3",
-    "totalRatingsString": "500+",
-    "sla": {
-    "deliveryTime": 23,
-    "lastMileTravel": 0.8,
-    "serviceability": "SERVICEABLE",
-    "slaString": "23 mins",
-    "lastMileTravelString": "0.8 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "437938",
+      name: "Big Fat Momo",
+      cloudinaryImageId: "niejlwued12ctp4rsenp",
+      locality: "PT Usha Road",
+      areaName: "Vellayil",
+      costForTwo: "₹199 for two",
+      cuisines: ["Chinese", "Pizzas"],
+      avgRating: 4.3,
+      parentId: "20555",
+      avgRatingString: "4.3",
+      totalRatingsString: "500+",
+      sla: {
+        deliveryTime: 23,
+        lastMileTravel: 0.8,
+        serviceability: "SERVICEABLE",
+        slaString: "23 mins",
+        lastMileTravelString: "0.8 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-24 23:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      aggregatedDiscountInfoV2: {},
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          textBased: {},
+          imageBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-24 23:00:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=437938",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "aggregatedDiscountInfoV2": {},
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "textBased": {},
-    "imageBased": {},
-    "textExtendedBadges": {}
-    }
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=437938",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    },
-    {
+  },
+  {
     data: {
-    "id": "230155",
-    "name": "Sagar Restaurant (New Sagar)",
-    "cloudinaryImageId": "sfazfve7qn0ybwbgrrhj",
-    "locality": "Mavoor Road",
-    "areaName": "Palayam",
-    "costForTwo": "₹400 for two",
-    "cuisines": [
-    "Chinese",
-    "North Indian",
-    "South Indian",
-    "Ice Cream",
-    "Biryani"
-    ],
-    "avgRating": 4.3,
-    "parentId": "20195",
-    "avgRatingString": "4.3",
-    "totalRatingsString": "10K+",
-    "promoted": true,
-    "adTrackingId": "cid=10820609~p=4~eid=0000018d-3b29-c9bc-1eb6-ef7b00aa0443~srvts=1706094610876~45995",
-    "sla": {
-    "deliveryTime": 32,
-    "lastMileTravel": 1.9,
-    "serviceability": "SERVICEABLE",
-    "slaString": "32 mins",
-    "lastMileTravelString": "1.9 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "230155",
+      name: "Sagar Restaurant (New Sagar)",
+      cloudinaryImageId: "sfazfve7qn0ybwbgrrhj",
+      locality: "Mavoor Road",
+      areaName: "Palayam",
+      costForTwo: "₹400 for two",
+      cuisines: [
+        "Chinese",
+        "North Indian",
+        "South Indian",
+        "Ice Cream",
+        "Biryani",
+      ],
+      avgRating: 4.3,
+      parentId: "20195",
+      avgRatingString: "4.3",
+      totalRatingsString: "10K+",
+      promoted: true,
+      adTrackingId:
+        "cid=10820609~p=4~eid=0000018d-3b29-c9bc-1eb6-ef7b00aa0443~srvts=1706094610876~45995",
+      sla: {
+        deliveryTime: 32,
+        lastMileTravel: 1.9,
+        serviceability: "SERVICEABLE",
+        slaString: "32 mins",
+        lastMileTravelString: "1.9 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-24 23:45:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      aggregatedDiscountInfoV2: {},
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          textExtendedBadges: {},
+          textBased: {},
+          imageBased: {},
+        },
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-24 23:45:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=230155",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "aggregatedDiscountInfoV2": {},
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "textExtendedBadges": {},
-    "textBased": {},
-    "imageBased": {}
-    }
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=230155",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    },
-    {
+  },
+  {
     data: {
-    "id": "340560",
-    "name": "KFC",
-    "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
-    "locality": "Rp Mall",
-    "areaName": "Palayam",
-    "costForTwo": "₹400 for two",
-    "cuisines": [
-    "Burgers",
-    "Biryani",
-    "American",
-    "Snacks",
-    "Fast Food"
-    ],
-    "avgRating": 4.2,
-    "parentId": "547",
-    "avgRatingString": "4.2",
-    "totalRatingsString": "1K+",
-    "sla": {
-    "deliveryTime": 25,
-    "lastMileTravel": 1.6,
-    "serviceability": "SERVICEABLE",
-    "slaString": "25 mins",
-    "lastMileTravelString": "1.6 km",
-    "iconType": "ICON_TYPE_EMPTY"
+      id: "340560",
+      name: "KFC",
+      cloudinaryImageId: "f01666ac73626461d7455d9c24005cd4",
+      locality: "Rp Mall",
+      areaName: "Palayam",
+      costForTwo: "₹400 for two",
+      cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+      avgRating: 4.2,
+      parentId: "547",
+      avgRatingString: "4.2",
+      totalRatingsString: "1K+",
+      sla: {
+        deliveryTime: 25,
+        lastMileTravel: 1.6,
+        serviceability: "SERVICEABLE",
+        slaString: "25 mins",
+        lastMileTravelString: "1.6 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-25 00:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textExtendedBadges: {},
+          textBased: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "20% OFF",
+        subHeader: "UPTO ₹50",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
     },
-    "availability": {
-    "nextCloseTime": "2024-01-25 00:00:00",
-    "opened": true
+    analytics: {},
+    cta: {
+      link: "swiggy://menu?restaurant_id=340560",
+      text: "RESTAURANT_MENU",
+      type: "DEEPLINK",
     },
-    "badges": {},
-    "isOpen": true,
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "imageBased": {},
-    "textExtendedBadges": {},
-    "textBased": {}
-    }
-    },
-    "aggregatedDiscountInfoV3": {
-    "header": "20% OFF",
-    "subHeader": "UPTO ₹50"
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {}
-    },
-    "analytics": {},
-    "cta": {
-    "link": "swiggy://menu?restaurant_id=340560",
-    "text": "RESTAURANT_MENU",
-    "type": "DEEPLINK"
-    }
-    }
+  },
 ];
 
 const Body = () => {
@@ -962,11 +909,9 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        {resList.map((restaurant)=> (
-        <RestaurantCard key={restaurant.data.id} resData={restaurant}/>
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
-
-
       </div>
     </div>
   );

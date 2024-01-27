@@ -24,3 +24,13 @@
  * -Address
  * -Contact
  */
+
+
+# Two types of export/import
+-default export--export one file at a time
+--export default component;
+--import component from "path"
+
+-named export--export more than one file at a time
+--export const compoenent;
+--import {component} from "path";

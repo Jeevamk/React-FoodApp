@@ -34,3 +34,8 @@
 -named export--export more than one file at a time
 --export const compoenent;
 --import {component} from "path";
+
+# React Hooks
+(Normal Js utility functions)
+-useState()
+-useEffect()

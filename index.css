@@ -37,7 +37,6 @@
 .resCard{
     width: 250px;
     margin: 5px;
-    padding: 5;
     cursor: pointer;
     padding: 5px;
     line-height: 25px;
@@ -56,5 +55,18 @@
 .res-container{
     display: flex;
     flex-wrap: wrap;
-    margin:0px 80px;
+    margin:0px 100px;
+}
+
+.filter-btn{
+    margin: 10px 100px;
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+}
+
+.filter-btn:hover{
+    background-color: black;
+    color: white;
 }

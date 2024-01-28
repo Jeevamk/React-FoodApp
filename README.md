@@ -39,3 +39,6 @@
 (Normal Js utility functions)
 -useState()
 -useEffect()
+
+# Reconcilation algorithms
+-Virtual DOM:It is a representation of actual DOM

@@ -22,11 +22,12 @@ const fetchData = async() => {
   setresOfList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 }
 
-if (resOfList.length === 0) {
-  return <Shimmer/>
-}
+//conditional rendering//
+// if (resOfList.length === 0) {
+//   return <Shimmer/>
+// }
 
-  return (
+  return (resOfList.length === 0) ?  <Shimmer/> :(
     <div className="body">
       <div className="filter">
         <button

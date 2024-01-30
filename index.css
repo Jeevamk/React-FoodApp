@@ -42,11 +42,13 @@
     line-height: 25px;
     /* border-radius: 15px ; */
     background-color:#f0f0f0;
+    border-radius: 15px;
+
 }
-/* .resCard:hover {
-    border: 1px solid rgb(39, 38, 38);
-    
-} */
+.resCard:hover {
+    /* border: 1px solid rgb(39, 38, 38); */
+    transform: scale(0.9);
+}
 
 .search{
     padding: 10px;
@@ -83,4 +85,13 @@
     height: 300px;
     background-color:#f0f0f0;
     border-radius: 15px;
+}
+
+.btnLogin{
+    padding: 10px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    background-color: white;
+    cursor: pointer;
 }

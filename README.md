@@ -42,3 +42,6 @@
 
 # Reconcilation algorithms
 -Virtual DOM:It is a representation of actual DOM
+
+# shimmer
+-show a loading state to our app until the API is getting.

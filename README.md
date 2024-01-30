@@ -45,3 +45,6 @@
 
 # shimmer
 -show a loading state to our app until the API is getting.
+
+# re-render
+whenever state variables update, react triggers reconciliation (re-render the component)

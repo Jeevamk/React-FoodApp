@@ -45,10 +45,9 @@
     border-radius: 15px;
 
 }
-.resCard:hover {
-    /* border: 1px solid rgb(39, 38, 38); */
+/* .resCard:hover {
     transform: scale(0.9);
-}
+} */
 
 .search{
     padding: 10px;

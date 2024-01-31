@@ -48,3 +48,11 @@
 
 # re-render
 whenever state variables update, react triggers reconciliation (re-render the component)
+
+# useEffect()
+-2 Arguments:
+-- callback function
+--dependencies
+*if no dependencies - useEffect will called evey rendering
+*if empty dependencies - useEffect will calleds just once.initial rendering
+*if we put something in dependencies array - it will called evey time when the statevariable is updated.

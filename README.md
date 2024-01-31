@@ -56,3 +56,10 @@ whenever state variables update, react triggers reconciliation (re-render the co
 *if no dependencies - useEffect will called evey rendering
 *if empty dependencies - useEffect will calleds just once.initial rendering
 *if we put something in dependencies array - it will called evey time when the statevariable is updated.
+
+# outlet
+-The React Router <Outlet/> component (from react-router-dom ) is used within the parent route element to indicate where a child route element should be rendered. 
+
+# 2 types of routing
+-client side routing
+-server side routing

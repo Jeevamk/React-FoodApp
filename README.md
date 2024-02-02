@@ -63,3 +63,22 @@ whenever state variables update, react triggers reconciliation (re-render the co
 # 2 types of routing
 -client side routing
 -server side routing
+
+# life cycle
+-parent constructor
+-parent render
+-child constructor
+-child render
+-child componentDidMount
+-parent componentDidMount
+
+# life cycle with 2 child routes
+-parent constructor
+-parent render
+-first child constructor
+-first child render
+-second child constructor
+-second child render
+-first child componentDidMount
+-second child componentDidMount
+-parent componentDidMount

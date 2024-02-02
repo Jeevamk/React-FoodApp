@@ -82,3 +82,29 @@ whenever state variables update, react triggers reconciliation (re-render the co
 -first child componentDidMount
 -second child componentDidMount
 -parent componentDidMount
+
+# custom hooks
+-single responsibility principle
+-the code can resuable,maintanable and testable 
+
+# Bundling
+-Bundling is the process of following imported files and merging them into a single file
+
+# code splitting/chunking
+-create multiple bundles that can be dynamically loaded at runtime.
+
+# Lazy 
+-Lazy is an function from react by named exporting
+-Lazy takes a callback function
+-In this callback function return a funcion import with path of component as argument
+  -----------------------------------------------------------------------
+  eg:- const Grocery = lazy(()=> import ('../components/Grocery'))
+  -----------------------------------------------------------------------
+-Regularly in our app all the scripts are bundled in a single bundle 
+-In case of large applications there are somany scripts are included so that file need big storage space and take too time to load
+-That time this lazy loading is make small multiple bundles for that 
+-when we render that component that time only the lazy script work
+
+# suspense
+The lazy component should then be rendered inside a Suspense component, which allows us to show some fallback content (such as a loading indicator) while we’re waiting for the lazy component to load.
+

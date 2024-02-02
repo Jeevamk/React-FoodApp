@@ -14,6 +14,8 @@ const [searchText,setsearchText] = useState("");
 const [filterData,setFilterData] = useState([]);
 
 
+
+
 useEffect(()=>{
   fetchData();
 },[])
@@ -31,7 +33,7 @@ const fetchData = async() => {
 
 const OnlineStatus = useOnlineStatus();
 if(OnlineStatus===false) {
-  return <h1>Pleace check internet Connections!!!</h1>
+  return <h1>NO Internet , Pleace check internet Connections!!!</h1>
 }
 
 //conditional rendering//

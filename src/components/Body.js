@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -25,6 +26,12 @@ const fetchData = async() => {
   //optional chaining//
   setresOfList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   setFilterData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+}
+
+
+const OnlineStatus = useOnlineStatus();
+if(OnlineStatus===false) {
+  return <h1>Pleace check internet Connections!!!</h1>
 }
 
 //conditional rendering//

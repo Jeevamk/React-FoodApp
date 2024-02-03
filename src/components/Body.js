@@ -8,65 +8,67 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
-//local state variables
-const [resOfList,setresOfList] = useState ([]);
-const [searchText,setsearchText] = useState("");
-const [filterData,setFilterData] = useState([]);
+  //local state variables
+  const [resOfList, setresOfList] = useState([]);
+  const [searchText, setsearchText] = useState("");
+  const [filterData, setFilterData] = useState([]);
 
 
 
 
-useEffect(()=>{
-  fetchData();
-},[])
+  useEffect(() => {
+    fetchData();
+  }, [])
 
-const fetchData = async() => {
-  const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.2587531&lng=75.78041&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-  
-  const json = await data.json()
-  console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-  //optional chaining//
-  setresOfList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  setFilterData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-}
+  const fetchData = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.2587531&lng=75.78041&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+    const json = await data.json()
+    console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    //optional chaining//
+    setresOfList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilterData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  }
 
 
-const OnlineStatus = useOnlineStatus();
-if(OnlineStatus===false) {
-  return <h1>NO Internet , Pleace check internet Connections!!!</h1>
-}
+  const OnlineStatus = useOnlineStatus();
+  if (OnlineStatus === false) {
+    return <h1>NO Internet , Pleace check internet Connections!!!</h1>
+  }
 
-//conditional rendering//
-// if (resOfList.length === 0) {
-//   return <Shimmer/>
-// }
+  //conditional rendering//
+  // if (resOfList.length === 0) {
+  //   return <Shimmer/>
+  // }
 
-  return (resOfList.length === 0) ?  <Shimmer/> :(
+  return (resOfList.length === 0) ? <Shimmer /> : (
     <div className="body">
-      <div className="filter">
+      <div className="flex m-4">
         <div className="search-box">
-          <input type="text" className="seach-text"  placeholder="Search here...." value={searchText} onChange={(e)=> {
+          <input type="text" className="border border-black p-1 m-3" placeholder="Search here...." value={searchText} onChange={(e) => {
             setsearchText(e.target.value);
           }}></input>
-          <button className="search-btn" onClick={()=>{
-            const filterSearch = resOfList.filter((res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+          <button className="search border border-black bg-black text-white py-1 px-4 rounded-lg" onClick={() => {
+            const filterSearch = resOfList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
             setFilterData(filterSearch);
           }}>Search</button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-           const filterdResOfList = resOfList.filter((res) => res.info.avgRating > 4);
-           setresOfList(filterdResOfList)
-          }}
-          
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="mx-8 my-3">
+          <button
+            className="search border border-black  px-4 py-1 rounded-lg"
+            onClick={() => {
+              const filterdResOfList = resOfList.filter((res) => res.info.avgRating > 4.2);
+              setFilterData(filterdResOfList)
+            }}>
+            Top Rated Restaurants
+          </button>
+
+        </div>
+
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filterData.map((restaurant) => (
-         <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}><RestaurantCard  resData={restaurant} /></Link>
+          <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
         ))}
 
       </div>

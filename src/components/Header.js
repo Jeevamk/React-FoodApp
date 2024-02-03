@@ -11,21 +11,21 @@ const Header = () => {
   
 
     return (
-      <div className="header">
+      <div className="flex justify-between shadow-lg">
         <div className="logo-container">
           <img
-            className="logo"
+            className="w-20"
             src={LOGO_URL}
           ></img>
         </div>
-        <div className="navItems">
-          <ul>
-            <li>Online Status : {OnlineStatus ? "✅" :"🔴"}</li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li>Cart</li>
-            <li><button className='btnLogin' onClick={()=> {
+        <div className="flex items-center">
+          <ul className='flex p-3 m-3'>
+            <li className='px-4'>Online Status : {OnlineStatus ? "✅" :"🔴"}</li>
+            <li className='px-4'><Link to="/">Home</Link></li>
+            <li className='px-4'><Link to="/contact">Contact Us</Link></li>
+            <li className='px-4'><Link to="/about">About Us</Link></li>
+            <li className='px-4'>Cart</li>
+            <li className='px-4'><button className='btnLogin' onClick={()=> {
              loginBtn ==='Login'? setloginBtn("Logout"): setloginBtn("Login")
             }}>
               {loginBtn}</button></li>

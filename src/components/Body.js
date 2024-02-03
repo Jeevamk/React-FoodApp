@@ -45,17 +45,17 @@ const Body = () => {
     <div className="body">
       <div className="flex m-4">
         <div className="search-box">
-          <input type="text" className="border border-black p-1 m-3" placeholder="Search here...." value={searchText} onChange={(e) => {
+          <input type="text" className="border border-black p-1 m-3 placeholder:italic placeholder:text-slate-400" placeholder="Search for anything..." value={searchText} onChange={(e) => {
             setsearchText(e.target.value);
           }}></input>
-          <button className="search border border-black bg-black text-white py-1 px-4 rounded-lg" onClick={() => {
+          <button className="search border border-black bg-black text-white py-1 px-4 rounded-lg italic" onClick={() => {
             const filterSearch = resOfList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
             setFilterData(filterSearch);
           }}>Search</button>
         </div>
         <div className="mx-8 my-3">
           <button
-            className="search border border-black  px-4 py-1 rounded-lg"
+            className="search border border-black  px-4 py-1 rounded-lg italic"
             onClick={() => {
               const filterdResOfList = resOfList.filter((res) => res.info.avgRating > 4.2);
               setFilterData(filterdResOfList)

@@ -13,6 +13,8 @@ const Body = () => {
   const [searchText, setsearchText] = useState("");
   const [filterData, setFilterData] = useState([]);
 
+  console.log("reslist",resOfList);
+
 
 
 
@@ -66,7 +68,7 @@ const Body = () => {
         </div>
 
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         {filterData.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
         ))}

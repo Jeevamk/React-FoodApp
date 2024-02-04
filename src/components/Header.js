@@ -21,10 +21,10 @@ const Header = () => {
         <div className="flex items-center">
           <ul className='flex p-3 m-3'>
             <li className='px-4'>Online: {OnlineStatus ? "✅" :"🔴"}</li>
-            <li className='px-4'><Link to="/">Home</Link></li>
-            <li className='px-4'><Link to="/contact">Contact Us</Link></li>
-            <li className='px-4'><Link to="/about">About Us</Link></li>
-            <li className='px-4'>Cart</li>
+            <li className='px-4 hover:text-orange-500'><Link to="/">Home</Link></li>
+            <li className='px-4 hover:text-orange-500'><Link to="/contact">Contact Us</Link></li>
+            <li className='px-4 hover:text-orange-500'><Link to="/about">About Us</Link></li>
+            <li className='px-4 hover:text-orange-500 '>Cart</li>
             <li className='px-4 border border-black p-1 text-black-900 hover:bg-black hover:text-white rounded-lg'><button className='btnLogin' onClick={()=> {
              loginBtn ==='Login'? setloginBtn("Logout"): setloginBtn("Login")
             }}>
@@ -32,7 +32,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    );
+    ); 
   };
 
 

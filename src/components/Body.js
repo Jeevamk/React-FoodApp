@@ -1,9 +1,10 @@
 import RestaurantCard , { WithPromotedRestaurant } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import RestaurantCard from "./RestaurantCard";
+import UserContext from "../utils/UserContext";
 
 
 
@@ -39,6 +40,8 @@ const Body = () => {
     return <h1>NO Internet , Pleace check internet Connections!!!</h1>
   }
 
+  const { loggedInUser,setUserName } = useContext(UserContext)
+
   //conditional rendering//
   // if (resOfList.length === 0) {
   //   return <Shimmer/>
@@ -65,6 +68,11 @@ const Body = () => {
             }}>
             Top Rated Restaurants
           </button>
+
+        </div>
+        <div className="mx-8 my-3">
+          <label>User Name:</label>
+          <input className="border border-black  px-4 py-1 rounded-lg " onChange={(e) => {setUserName(e.target.value)}} value={loggedInUser}></input>
 
         </div>
 

@@ -1,4 +1,5 @@
 import React  from "react"
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component{
 
@@ -35,6 +36,12 @@ class UserClass extends React.Component{
 
         return(
             <div className="count-countainer">
+                <div>
+                    loggin user
+                    <UserContext.Consumer>
+                        {(data)=>console.log(data)}
+                    </UserContext.Consumer>
+                </div>
 
                 {/* <h3>count:{count}</h3>
                 <button className="btn-count" onClick={()=>{

@@ -112,6 +112,12 @@ The lazy component should then be rendered inside a Suspense component, which al
 -ANT UI
 -Tailwind
 
+# controlled components and uncontrolled components
+-Controlled components refer to the components where the state and behaviors are controlled by Parent components.
+-Uncontrolled components are the ones having control of their own state and manage the behaviors on themselves.
+
+
+
 
 
 

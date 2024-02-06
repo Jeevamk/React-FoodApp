@@ -116,8 +116,14 @@ The lazy component should then be rendered inside a Suspense component, which al
 -Controlled components refer to the components where the state and behaviors are controlled by Parent components.
 -Uncontrolled components are the ones having control of their own state and manage the behaviors on themselves.
 
-
-
+# redux toolkit
+-Install  @reduxjs/toolkit and react-redux
+-Build our store
+-Connect store to app
+-Build cart slice
+-Dispatch acton
+-Selector
+ 
 
 
 
